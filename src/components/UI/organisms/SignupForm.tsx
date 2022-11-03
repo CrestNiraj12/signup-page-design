@@ -53,16 +53,18 @@ export default function SignupForm() {
         </Text>
       </div>
       <Button
-        className="my-5 text-white bg-[#3767B1] hover:bg-[#214275]"
+        className="my-5 text-white bg-[#3767B1] hover:bg-[#214275] text-sm tracking-wide"
         hasIcon={false}
         onClick={() => null}
       >
         Create account
       </Button>
-      <Text className="w-full text-center mt-3">
+      <Text className="w-full text-center mt-3 text-sm">
         Already have an account?{" "}
         <span>
-          <Link href="/">Log in</Link>
+          <Link underline={false} href="/">
+            Log in
+          </Link>
         </span>
       </Text>
     </div>

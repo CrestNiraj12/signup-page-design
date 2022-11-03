@@ -14,7 +14,7 @@ export default function InputGroup({
     <div
       className={`${className} w-full flex flex-col justify-start items-start my-2`}
     >
-      <label htmlFor={id} className="text-[#030229]">
+      <label htmlFor={id} className="text-[#030229] text-sm tracking-wide">
         {label}
       </label>
       <InputField
