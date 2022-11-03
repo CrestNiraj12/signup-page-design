@@ -3,7 +3,7 @@ export default function Text({
   children,
 }: {
   className?: string;
-  children: string | JSX.Element | JSX.Element[];
+  children: string | JSX.Element | (string | JSX.Element)[];
 }) {
   return <p className={className}>{children}</p>;
 }

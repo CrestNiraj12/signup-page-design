@@ -1,9 +1,3 @@
-export default function Checkbox({
-  className = "",
-  children,
-}: {
-  className?: string;
-  children: string | JSX.Element | JSX.Element[];
-}) {
-  return <p className={className}>{children}</p>;
+export default function Checkbox({ className = "" }: { className?: string }) {
+  return <input className={className} type="checkbox" />;
 }

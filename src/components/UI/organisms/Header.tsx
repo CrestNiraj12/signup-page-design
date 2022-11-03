@@ -6,7 +6,7 @@ export default function Header() {
   return (
     <>
       <Title />
-      <SocialButtons className="mt-10" />
+      <SocialButtons className="mt-14" />
       <Divider className="my-5" />
     </>
   );

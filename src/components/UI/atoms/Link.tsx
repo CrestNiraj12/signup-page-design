@@ -8,7 +8,7 @@ export default function Link({
   href: string;
 }) {
   return (
-    <a href={href} className={className}>
+    <a href={href} className={`${className} underline text-[#3767B1]`}>
       {children}
     </a>
   );
