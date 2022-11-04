@@ -1,8 +1,10 @@
+import NextImage from "next/image";
+
 export default function Image({
   className = "",
   src,
-  height = 32,
-  width = 32,
+  height = undefined,
+  width = undefined,
   alt = "",
 }: {
   className?: string;
@@ -10,9 +12,10 @@ export default function Image({
   height?: number;
   width?: number;
   alt?: string;
+  customSize?: boolean;
 }) {
   return (
-    <img
+    <NextImage
       src={src}
       alt={alt}
       className={className}

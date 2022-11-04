@@ -1,18 +1,19 @@
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { ChangeEvent, useState } from "react";
-import { useNavigate } from "react-router-dom";
 import Button from "../atoms/Button";
 import Checkbox from "../atoms/Checkbox";
 import Link from "../atoms/Link";
 import Text from "../atoms/Text";
 import InputGroup from "../molecules/InputGroup";
-import Eye from "../../../assets/images/eye.png";
-import EyeOff from "../../../assets/images/eye-off.png";
 import { collection, addDoc } from "firebase/firestore";
-import { auth, db } from "../../../config/firebase";
+import { auth, db } from "../../config/firebase";
+import { useRouter } from "next/router";
+import Image from "../atoms/Image";
+import Eye from "../../public/images/eye.png";
+import EyeOff from "../../public/images/eye-off.png";
 
 export default function SignupForm() {
-  const navigate = useNavigate();
+  const router = useRouter();
 
   const [showPassword, setShowPassword] = useState(false);
 
@@ -59,7 +60,7 @@ export default function SignupForm() {
           console.error("Error adding document: ", e);
         }
         console.log(user);
-        navigate("/account-created");
+        router.push("/account-created");
       })
       .catch((error) => {
         const errorMessage = error.message;
@@ -124,7 +125,7 @@ export default function SignupForm() {
           className="icon_button absolute right-4 top-[3.05rem]"
           onClick={handleTogglePassword}
         >
-          <img
+          <Image
             src={showPassword ? Eye : EyeOff}
             alt="Eye icon"
             className="w-5 h-5 font-extralight"

@@ -17,7 +17,6 @@ export default function Checkbox({
     <input
       id={id}
       name={name}
-      defaultChecked={false}
       className={className}
       checked={checked}
       onChange={onChange}

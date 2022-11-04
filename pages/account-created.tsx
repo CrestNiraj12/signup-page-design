@@ -1,29 +1,33 @@
-import InfoCard from "../UI/molecules/InfoCard";
-import Like from "../../assets/images/like.png";
-import Text from "../UI/atoms/Text";
+import InfoCard from "../components/molecules/InfoCard";
+import Like from "../public/images/like.png";
+import Text from "../components/atoms/Text";
 import { signOut } from "firebase/auth";
-import { useNavigate } from "react-router-dom";
-import { auth } from "../../config/firebase";
+import { auth } from "../config/firebase";
+import { useRouter } from "next/router";
+import Head from "next/head";
 
 const AccountCreated = () => {
-  const navigate = useNavigate();
+  const router = useRouter();
 
   const logOut = () =>
     signOut(auth)
       .then(() => {
         console.log("Successfully logged out!");
-        navigate("/");
+        router.push("/");
       })
       .catch((err) => console.log(err.message));
 
   return (
-    <main>
+    <>
+      <Head>
+        <title>Account Created Page</title>
+      </Head>
       <InfoCard image={Like} onClick={logOut} buttonText={"Log out"}>
         <Text className="font-bold mt-5">
           Your account successfully created.
         </Text>
       </InfoCard>
-    </main>
+    </>
   );
 };
 

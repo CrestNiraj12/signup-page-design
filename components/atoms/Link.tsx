@@ -1,3 +1,5 @@
+import NextLink from "next/link";
+
 export default function Link({
   className = "",
   children,
@@ -10,13 +12,13 @@ export default function Link({
   underline?: boolean;
 }) {
   return (
-    <a
+    <NextLink
       href={href}
       className={`${className} ${
         underline ? "underline" : ""
-      } text-[#3767B1] font-[Nunito] text-[15px]`}
+      } text-[#3767B1] text-[15px]`}
     >
       {children}
-    </a>
+    </NextLink>
   );
 }

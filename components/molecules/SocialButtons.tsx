@@ -1,13 +1,13 @@
 import Button from "../atoms/Button";
-import GoogleLogo from "../../../assets/images/google.svg";
-import FBLogo from "../../../assets/images/fb.svg";
 import {
   GoogleAuthProvider,
   FacebookAuthProvider,
   signInWithPopup,
 } from "firebase/auth";
-import { useNavigate } from "react-router-dom";
-import { auth } from "../../../config/firebase";
+import { auth } from "../../config/firebase";
+import { useRouter } from "next/router";
+import GoogleLogo from "../../public/images/google.svg";
+import FBLogo from "../../public/images/fb.svg";
 
 const googleProvider = new GoogleAuthProvider();
 const facebookProvider = new FacebookAuthProvider();
@@ -17,7 +17,7 @@ export default function SocialButtons({
 }: {
   className?: string;
 }) {
-  const navigate = useNavigate();
+  const router = useRouter();
 
   const socialSignIn = (social: "google" | "facebook") => {
     signInWithPopup(
@@ -33,7 +33,7 @@ export default function SocialButtons({
         const user = result.user;
         console.log(token);
         console.log(user);
-        navigate("/account-created");
+        router.push("/account-created");
       })
       .catch((error) => {
         const errorMessage = error.message;
