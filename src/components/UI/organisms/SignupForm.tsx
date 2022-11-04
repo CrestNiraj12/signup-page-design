@@ -10,6 +10,7 @@ export default function SignupForm() {
       <InputGroup
         type="text"
         name="name"
+        id="name"
         value=""
         onChange={() => null}
         label="Full Name"
@@ -18,6 +19,7 @@ export default function SignupForm() {
       <InputGroup
         type="email"
         name="email"
+        id="email"
         value=""
         onChange={() => null}
         label="Email Address"
@@ -26,6 +28,7 @@ export default function SignupForm() {
       <InputGroup
         type="text"
         name="username"
+        id="username"
         value=""
         onChange={() => null}
         label="Username"
@@ -34,6 +37,7 @@ export default function SignupForm() {
       <InputGroup
         type="password"
         name="password"
+        id="password"
         value=""
         onChange={() => null}
         label="Password"
