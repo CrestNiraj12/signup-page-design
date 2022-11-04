@@ -7,6 +7,7 @@ import {
   signInWithPopup,
 } from "firebase/auth";
 import { auth } from "../../pages/Signup";
+import { useNavigate } from "react-router-dom";
 
 const googleProvider = new GoogleAuthProvider();
 const facebookProvider = new FacebookAuthProvider();
@@ -16,34 +17,27 @@ export default function SocialButtons({
 }: {
   className?: string;
 }) {
-  const googleSignIn = () => {
-    signInWithPopup(auth, googleProvider)
-      .then((result) => {
-        const credential = GoogleAuthProvider.credentialFromResult(result);
-        const token = credential?.accessToken;
-        const user = result.user;
-        console.log(token);
-        console.log(user);
-      })
-      .catch((error) => {
-        const errorMessage = error.message;
-        console.log(errorMessage);
-      });
-  };
+  const navigate = useNavigate();
 
-  const facebookSignIn = () => {
-    signInWithPopup(auth, facebookProvider)
+  const socialSignIn = (social: "google" | "facebook") => {
+    signInWithPopup(
+      auth,
+      social === "google" ? googleProvider : facebookProvider
+    )
       .then((result) => {
-        const credential = FacebookAuthProvider.credentialFromResult(result);
+        const credential =
+          social === "google"
+            ? GoogleAuthProvider.credentialFromResult(result)
+            : FacebookAuthProvider.credentialFromResult(result);
         const token = credential?.accessToken;
         const user = result.user;
         console.log(token);
         console.log(user);
+        navigate("/account-created");
       })
       .catch((error) => {
         const errorMessage = error.message;
         console.log(errorMessage);
-        console.log(error.customData.email);
       });
   };
 
@@ -53,7 +47,7 @@ export default function SocialButtons({
         fontSize="sm"
         hasIcon={true}
         Icon={GoogleLogo}
-        onClick={googleSignIn}
+        onClick={() => socialSignIn("google")}
       >
         Google
       </Button>
@@ -62,7 +56,7 @@ export default function SocialButtons({
         fontSize="sm"
         hasIcon={true}
         Icon={FBLogo}
-        onClick={facebookSignIn}
+        onClick={() => socialSignIn("facebook")}
       >
         Facebook
       </Button>
