@@ -9,6 +9,7 @@ export default function InputGroup({
   value,
   placeholder,
   onChange,
+  required,
 }: InputProps & { label: string }) {
   return (
     <div
@@ -24,6 +25,7 @@ export default function InputGroup({
         value={value}
         onChange={onChange}
         placeholder={placeholder}
+        required={required}
       />
     </div>
   );

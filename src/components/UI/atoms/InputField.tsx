@@ -8,6 +8,7 @@ export type InputProps = {
   value: any;
   onChange: ChangeEventHandler;
   placeholder?: string;
+  required?: Boolean;
 };
 
 export default function InputField({
@@ -18,6 +19,7 @@ export default function InputField({
   value,
   onChange,
   placeholder = "",
+  required = true,
 }: InputProps) {
   return (
     <input
@@ -26,8 +28,9 @@ export default function InputField({
       value={value}
       onChange={onChange}
       type={type}
-      className={`${className} bg-[#F7F7F8] placeholder-[#030229B3] py-3 w-full rounded px-3 text-sm mt-2`}
+      className={`${className} bg-[#F7F7F8] placeholder-[#0302298e] py-3 w-full rounded px-3 text-sm mt-2`}
       placeholder={placeholder}
+      required
     />
   );
 }

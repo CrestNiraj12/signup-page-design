@@ -2,8 +2,8 @@ import InfoCard from "../UI/molecules/InfoCard";
 import Like from "../../assets/images/like.png";
 import Text from "../UI/atoms/Text";
 import { signOut } from "firebase/auth";
-import { auth } from "./Signup";
 import { useNavigate } from "react-router-dom";
+import { auth } from "../../config/firebase";
 
 const AccountCreated = () => {
   const navigate = useNavigate();
