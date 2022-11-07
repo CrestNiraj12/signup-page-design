@@ -11,9 +11,11 @@ import { useRouter } from "next/router";
 import Image from "../atoms/Image";
 import Eye from "../../public/images/eye.png";
 import EyeOff from "../../public/images/eye-off.png";
+import { Trans, useTranslation } from "react-i18next";
 
 export default function SignupForm() {
   const router = useRouter();
+  const { t } = useTranslation();
 
   const [showPassword, setShowPassword] = useState(false);
 
@@ -90,7 +92,7 @@ export default function SignupForm() {
         id="name"
         value={data.name}
         onChange={handleChange}
-        label="Full Name"
+        label={t("fullname")}
         placeholder="John Kevine"
       />
       <InputGroup
@@ -99,7 +101,7 @@ export default function SignupForm() {
         id="email"
         value={data.email}
         onChange={handleChange}
-        label="Email Address"
+        label={t("email-address")}
         placeholder="example@gmail.com"
       />
       <InputGroup
@@ -108,7 +110,7 @@ export default function SignupForm() {
         id="username"
         value={data.username}
         onChange={handleChange}
-        label="Username"
+        label={t("username")}
         placeholder="johnkevine4362"
       />
       <div className="relative w-full">
@@ -118,7 +120,7 @@ export default function SignupForm() {
           id="password"
           value={data.password}
           onChange={handleChange}
-          label="Password"
+          label={t("password")}
           placeholder="&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;"
         />
         <div
@@ -142,14 +144,11 @@ export default function SignupForm() {
           className="mt-1"
         />
         <Text className="text-left ml-2 text-sm text-[#030229]">
-          By creating an account you agree to the{" "}
-          <span>
-            <Link href="/">terms of use</Link>
-          </span>{" "}
-          and our{" "}
-          <span>
+          <Trans i18nKey="terms-and-condition">
+            By creating an account you agree to the{" "}
+            <Link href="/">terms of use</Link> and our{" "}
             <Link href="/">privacy policy.</Link>
-          </span>
+          </Trans>
         </Text>
       </div>
       <Button
@@ -158,15 +157,15 @@ export default function SignupForm() {
         hasIcon={false}
         onClick={handleSignUp}
       >
-        Create account
+        {t("create-account")}
       </Button>
       <Text className="w-full text-center mt-3 text-sm">
-        Already have an account?{" "}
-        <span>
+        <Trans i18nKey="already-user">
+          Already have an account?{" "}
           <Link underline={false} href="/">
             Log in
           </Link>
-        </span>
+        </Trans>
       </Text>
     </form>
   );

@@ -1,5 +1,15 @@
 {
-  "signup": "サインアップページ",
-  "hello": "こんにちは世界",
-  "change-locale": "ロケールを変更"
+  "signup": "サインアップ",
+  "change-locale": "ロケールを変更",
+  "google": "グーグル",
+  "fb": "フェイスブック",
+  "fullname": "フルネーム",
+  "email-address": "電子メールアドレス",
+  "username": "ユーザー名",
+  "password": "パスワード",
+  "terms-and-condition": "アカウントを作成することにより、<2>terms of use</2>と<2>privacy policy</2>に同意したことになります。",
+  "create-account": "アカウントを作成する",
+  "already-user": "すでにアカウントをお持ちですか ？ <2>Log in</2>",
+  "account-created": "アカウントが正常に作成されました。",
+  "log-out": "ログアウト"
 }

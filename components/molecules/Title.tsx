@@ -1,7 +1,10 @@
 import Image from "../atoms/Image";
 import Heading from "../atoms/Heading";
+import { useTranslation } from "react-i18next";
 
 export default function Title({ className = "" }: { className?: string }) {
+  const { t } = useTranslation();
+
   return (
     <div className={`${className} flex flex-col justify-center items-center`}>
       <Image
@@ -11,7 +14,7 @@ export default function Title({ className = "" }: { className?: string }) {
         width={59}
       />
       <Heading className="font-[600] mt-5 text-xl tracking-wide">
-        Sign Up
+        {t("signup")}
       </Heading>
     </div>
   );

@@ -1,3 +1,4 @@
+import { DefaultTFuncReturn } from "i18next";
 import { MouseEventHandler } from "react";
 import Image from "../atoms/Image";
 
@@ -14,7 +15,11 @@ export default function Button({
   hasIcon: boolean;
   Icon?: string;
   className?: string;
-  children: string | JSX.Element | (string | JSX.Element)[];
+  children:
+    | DefaultTFuncReturn
+    | string
+    | JSX.Element
+    | (string | JSX.Element)[];
   onClick: MouseEventHandler;
   fontSize?: string;
 }) {

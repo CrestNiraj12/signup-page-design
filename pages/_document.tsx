@@ -6,7 +6,7 @@ export default function Document(props: DocumentProps) {
   return (
     <Html lang={currentLocale}>
       <Head />
-      <body>
+      <body className="relative">
         <Main />
         <NextScript />
       </body>

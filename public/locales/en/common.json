@@ -1,5 +1,15 @@
 {
-  "signup": "Signup Page",
-  "hello": "Hello world!",
-  "change-locale": "Change Locale"
+  "signup": "Sign Up",
+  "change-locale": "Change Locale",
+  "google": "Google",
+  "fb": "Facebook",
+  "fullname": "Full Name",
+  "email-address": "Email Address",
+  "username": "Username",
+  "password": "Password",
+  "terms-and-condition": "By creating an account you agree to the <2>terms of use</2> and our <2>privacy policy.</2>",
+  "create-account": "Create Account",
+  "already-user": "Already have an account? <2>Log in</2>",
+  "account-created": "Your account is successfully created.",
+  "log-out": "Log out"
 }

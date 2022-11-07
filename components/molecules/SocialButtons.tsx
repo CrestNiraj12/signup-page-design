@@ -8,6 +8,7 @@ import { auth } from "../../config/firebase";
 import { useRouter } from "next/router";
 import GoogleLogo from "../../public/images/google.svg";
 import FBLogo from "../../public/images/fb.svg";
+import { useTranslation } from "react-i18next";
 
 const googleProvider = new GoogleAuthProvider();
 const facebookProvider = new FacebookAuthProvider();
@@ -18,6 +19,7 @@ export default function SocialButtons({
   className?: string;
 }) {
   const router = useRouter();
+  const { t } = useTranslation();
 
   const socialSignIn = (social: "google" | "facebook") => {
     signInWithPopup(
@@ -49,7 +51,7 @@ export default function SocialButtons({
         Icon={GoogleLogo}
         onClick={() => socialSignIn("google")}
       >
-        Google
+        {t("google")}
       </Button>
       <span className="w-10"></span>
       <Button
@@ -58,7 +60,7 @@ export default function SocialButtons({
         Icon={FBLogo}
         onClick={() => socialSignIn("facebook")}
       >
-        Facebook
+        {t("fb")}
       </Button>
     </div>
   );

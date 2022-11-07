@@ -3,6 +3,7 @@ import "../styles/global.css";
 import { appWithTranslation } from "next-i18next";
 import { AppProps } from "next/app";
 import nextI18NextConfig from "../next-i18next.config.js";
+import ChangeLanguage from "../components/organisms/ChangeLanguage";
 
 const App = ({ Component, pageProps }: AppProps) => {
   return (
@@ -11,6 +12,7 @@ const App = ({ Component, pageProps }: AppProps) => {
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
+      <ChangeLanguage />
       <Component {...pageProps} />
     </>
   );
