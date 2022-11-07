@@ -22,7 +22,13 @@
     "incremental": true
   },
   "include": [
-    "src"
+    "pages",
+    "components",
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "**/*.js",
+    "**/*.jsx",
   ],
   "exclude": [
     "node_modules"

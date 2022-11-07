@@ -1,3 +1,4 @@
+import { StaticImageData } from "next/image";
 import { MouseEventHandler } from "react";
 import Button from "../atoms/Button";
 import Image from "../atoms/Image";
@@ -5,7 +6,7 @@ import InfoLayout from "../atoms/InfoLayout";
 
 type Props = {
   children: JSX.Element | JSX.Element[];
-  image: string;
+  image: string | StaticImageData;
   onClick: MouseEventHandler;
   buttonText: string;
 };

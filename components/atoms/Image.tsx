@@ -1,4 +1,4 @@
-import NextImage from "next/image";
+import NextImage, { StaticImageData } from "next/image";
 
 export default function Image({
   className = "",
@@ -8,7 +8,7 @@ export default function Image({
   alt = "",
 }: {
   className?: string;
-  src: string;
+  src: string | StaticImageData;
   height?: number;
   width?: number;
   alt?: string;
